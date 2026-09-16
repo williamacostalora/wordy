@@ -1,5 +1,7 @@
 package wordy.ast;
 
+import wordy.interpreter.EvaluationContext;
+
 import java.util.Map;
 import java.util.Objects;
 
@@ -58,5 +60,19 @@ public class BinaryExpressionNode extends ExpressionNode {
     @Override
     protected String describeAttributes() {
         return "(operator=" + operator + ')';
+    }
+
+
+    @Override
+    protected double doEvaluate(EvaluationContext context) {
+        double leftHand = lhs.evaluate(context);
+        double rightHand = rhs.evaluate(context);
+        return switch (operator) {
+            case ADDITION -> leftHand + rightHand;
+            case SUBTRACTION -> leftHand - rightHand;
+            case MULTIPLICATION -> leftHand * rightHand;
+            case DIVISION -> leftHand / rightHand;
+            case EXPONENTIATION -> Math.pow(leftHand, rightHand);
+        };
     }
 }
