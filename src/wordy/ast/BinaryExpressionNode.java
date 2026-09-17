@@ -61,8 +61,6 @@ public class BinaryExpressionNode extends ExpressionNode {
     protected String describeAttributes() {
         return "(operator=" + operator + ')';
     }
-
-
     @Override
     protected double doEvaluate(EvaluationContext context) {
         double leftHand = lhs.evaluate(context);
