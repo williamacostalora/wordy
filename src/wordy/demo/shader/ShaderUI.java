@@ -23,8 +23,9 @@ import wordy.parser.WordyParser;
  * click on to zoom.
  */
 public class ShaderUI {
-    private static final boolean USE_COMPILER = false;
-
+    private static final boolean USE_COMPILER = true; // Compiler is faster
+    // false Done rendering (378ms)
+    // true Done rendering (95ms)
     private final StatementNode program;
     private final BufferedImage image;
     private final JFrame window;

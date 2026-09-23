@@ -52,7 +52,7 @@ public class LoopNode extends StatementNode {
                 body.run(context);
             }
         } catch (LoopExited e) {
-
+            //pass
         }
     }
     @Override

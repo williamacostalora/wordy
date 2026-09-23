@@ -1,0 +1,11 @@
+REFLECTION
+
+In BlockNode, Paul used a var in the for loop where I wrote out StatementNode. At first
+I was confused, but I looked it up, and they compile to the exact same
+thing, since `var` just makes the compiler do some work and infer the type, so it is StatementNode in both cases.
+
+In ConditionalNode, Paul used a helper function to identify the operators and
+a ternary conditional shortcut, while I did it all in one function with a switch and if/else statements.
+Both seem to work the same, but Paul's is cleaner and concise.  It also made me notice I have similar
+switch code in my interpreter and compiler I could make into a helper function. The differences
+I found were mostly stylistic and not structural.
